@@ -13,13 +13,13 @@ let timeLeft = duration;
 let timerId;
 let isRunning = false;
 let isPaused = false;
-
 function updateDisplay() {
   let minutes = Math.floor(timeLeft / 60);
   let seconds = timeLeft % 60;
-  timerDisplay.textContent =
-    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  document.getElementById("minDisplay").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("secDisplay").textContent = String(seconds).padStart(2, '0');
 }
+
 
 function setButtons(state) {
 

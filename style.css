@@ -133,3 +133,70 @@ button:disabled {
     width: 90%;
   }
 }
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-unit button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#incMin, #incSec {
+  background-color: #4CAF50;
+}
+#decMin, #decSec {
+  background-color: #f44336;
+}
+
+.time-unit span {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.time-value {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.colon {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 45px;
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .timer-controls {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .time-unit button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .time-value, .colon {
+    font-size: 28px;
+  }
+}

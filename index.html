@@ -6,20 +6,32 @@
   <title>Countdown Timer</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <div class="container">
     <h1>Countdown Timer</h1>
-    <div class="timer" id="timer">05:00</div>
-    <div id="timer"></div>
-<button id="incMin">+</button><span> Min </span><button id="decMin">-</button>
-<button id="incSec">+</button><span> Sec  </span><button id="decSec">-</button>
-<br>
-<button id="start">Start</button>
-<button id="pause" style="display:none;">Pause</button>
-<button id="reset" style="display:none;">Reset</button>
+    <div class="timer-controls">
+      <div class="time-unit">
+        <button id="incMin">+</button>
+        <span></span>
+        <div class="time-value" id="minDisplay">05</div>
+        <button id="decMin">-</button>
+      </div>
+      <div class="colon">:</div>
+      <div class="time-unit">
+        <button id="incSec">+</button>
+        <span></span>
+        <div class="time-value" id="secDisplay">00</div>
+        <button id="decSec">-</button>
+      </div>
+    </div>
+    <div class="button-group">
+      <button id="start">Start</button>
+      <button id="pause" style="display:none;">Pause</button>
+      <button id="reset" style="display:none;">Reset</button>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
