@@ -1,56 +1,192 @@
+/* Base styles */
 body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Roboto, sans-serif;
   background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-  display: flex;
   height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
 }
 
+/* Main container */
 .container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-#timer {
-  font-size: 3rem;
-  margin: 20px 0;
-}
-
-.adjust-buttons {
+/* Heading */
+h1 {
+  font-size: 28px;
+  color: #222;
   margin-bottom: 20px;
 }
 
-.adjust-buttons button {
-  margin: 5px;
-  padding: 8px 15px;
-  font-size: 1rem;
-border: none;
-  border-radius: 8px;
-  background-color: #2196f3;
-  color: white;
-  cursor: pointer;
+/* Timer display */
+.timer {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.adjust-buttons button:hover {
-  background-color: #1976d2;
+/* Span text */
+.container span {
+  margin: 0 8px;
+  font-size: 16px;
+  vertical-align: middle;
+  color: #444;
 }
 
-.buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
+/* Generic button base */
+button {
   border: none;
+  padding: 10px 14px;
+  margin: 6px 4px;
+  font-size: 16px;
   border-radius: 8px;
-  background-color: #4caf50;
-  color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  color: white;
 }
 
-.buttons button:hover {
-  background-color: #388e3c;
+/* + Buttons (green) */
+#incMin, #incSec {
+  background-color: #4CAF50;
+}
+#incMin:hover, #incSec:hover {
+  background-color: #45a049;
+}
+
+/* - Buttons (red tint) */
+#decMin, #decSec {
+  background-color: #e57373;
+}
+#decMin:hover, #decSec:hover {
+  background-color: #d32f2f;
+}
+
+/* Start button (green) */
+#start {
+  background-color: #4CAF50;
+}
+#start:hover {
+  background-color: #45a049;
+}
+
+/* Pause/Resume button (yellow) */
+#pause {
+  background-color: #FFC107;
+  color: black;
+}
+#pause:hover {
+  background-color: #e0a800;
+}
+
+/* Reset button (red) */
+#reset {
+  background-color: #f44336;
+}
+#reset:hover {
+  background-color: #d32f2f;
+}
+
+/* Effects */
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .timer {
+    font-size: 36px;
+  }
+  
+  button {
+    width: 100%;
+    margin: 4px 0;
+  }
+  
+  #incMin, #incSec, #decMin, #decSec, #start, #pause, #reset {
+    width: calc(50% - 8px);
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .timer {
+    font-size: 28px;
+  }
+  
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  #incMin, #incSec, #decMin, #decSec, #start, #pause, #reset {
+    width: calc(100% - 8px);
+  }
+}
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+  }
+  
+  .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1, .timer, .container span {
+    color: #e0e0e0;
+  }
+  
+  button {
+    color: #fff;
+  }
+  
+  #incMin, #incSec {
+    background-color: #66bb6a;
+  }
+  
+  #decMin, #decSec {
+    background-color: #ef5350;
+  }
+  
+  #start {
+    background-color: #66bb6a;
+  }
+  
+  #pause {
+    background-color: #ffca28;
+    color: black;
+  }
+  
+  #reset {
+    background-color: #ef5350;
+  }
 }
