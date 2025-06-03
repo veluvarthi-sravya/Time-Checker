@@ -17,6 +17,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
+  max-width: 90%;
 }
 
 /* Heading */
@@ -36,13 +37,13 @@ h1 {
 
 /* Span text */
 .container span {
-  margin: 0 8px;
+  margin: 0 6px;
   font-size: 16px;
   vertical-align: middle;
   color: #444;
 }
 
-/* Generic button base */
+/* Button base */
 button {
   border: none;
   padding: 10px 14px;
@@ -52,6 +53,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
   color: white;
+  min-width: 60px;
 }
 
 /* + Buttons (green) */
@@ -78,7 +80,7 @@ button {
   background-color: #45a049;
 }
 
-/* Pause/Resume button (yellow) */
+/* Pause/Resume (yellow) */
 #pause {
   background-color: #FFC107;
   color: black;
@@ -95,98 +97,39 @@ button {
   background-color: #d32f2f;
 }
 
-/* Effects */
+/* Active and disabled states */
 button:active {
   transform: scale(0.97);
 }
-
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-/* Media queries for responsiveness */
-@media (max-width: 600px) {
+
+/* Responsive layout for small screens */
+@media screen and (max-width: 480px) {
   .container {
     padding: 20px;
-    width: 90%;
   }
-  
-  h1 {
-    font-size: 24px;
-  }
-  
+
   .timer {
-    font-size: 36px;
+    font-size: 40px;
   }
-  
+
   button {
-    width: 100%;
-    margin: 4px 0;
+    display: inline-block;
+    width: 42%;
+    margin: 6px 2%;
+    font-size: 15px;
   }
-  
-  #incMin, #incSec, #decMin, #decSec, #start, #pause, #reset {
-    width: calc(50% - 8px);
-  }
-}
-@media (max-width: 400px) {
-  .container {
-    padding: 15px;
-  }
-  
-  h1 {
-    font-size: 20px;
-  }
-  
-  .timer {
-    font-size: 28px;
-  }
-  
-  button {
+
+  .container span {
+    display: block;
+    margin: 8px 0 2px;
     font-size: 14px;
-    padding: 8px;
   }
-  
-  #incMin, #incSec, #decMin, #decSec, #start, #pause, #reset {
-    width: calc(100% - 8px);
-  }
-}
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-  }
-  
-  .container {
-    background-color: #1e1e1e;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  }
-  
-  h1, .timer, .container span {
-    color: #e0e0e0;
-  }
-  
-  button {
-    color: #fff;
-  }
-  
-  #incMin, #incSec {
-    background-color: #66bb6a;
-  }
-  
-  #decMin, #decSec {
-    background-color: #ef5350;
-  }
-  
-  #start {
-    background-color: #66bb6a;
-  }
-  
-  #pause {
-    background-color: #ffca28;
-    color: black;
-  }
-  
-  #reset {
-    background-color: #ef5350;
+
+  #start, #pause, #reset {
+    width: 90%;
   }
 }
