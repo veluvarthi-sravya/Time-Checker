@@ -1,6 +1,3 @@
-// Add these buttons to your HTML inside the timer container:
-// <button id="incMin">▲</button><span>Min</span><button id="decMin">▼</button>
-// <button id="incSec">▲</button><span>Sec</span><button id="decSec">▼</button>
 
 let timerDisplay = document.getElementById("timer");
 let startBtn = document.getElementById("start");
